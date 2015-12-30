@@ -2,7 +2,7 @@
 	"name": "ddgtest",
 	"description": "Example of DuckDuckGo API",
 	"authors": ["Azbuka-slovensko"],
-	"homepage": "",
+	"homepage": "https://github.com/Azbuka-slovensko/DuckDuckGo",
 	"license": "MIT",
 	"dependencies": {
 		"duckduckgo": "*",

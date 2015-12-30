@@ -2,7 +2,7 @@
 	"name": "duckduckgo",
 	"description": "Library for work with DuckDuckGo API",
 	"authors": ["Azbuka-slovensko"],
-	"homepage": "",
+	"homepage": "https://github.com/Azbuka-slovensko/DuckDuckGo",
 	"license": "MIT",
 	"libs": ["curl"],
 	"subPackages": [
