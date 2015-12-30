@@ -1,0 +1,17 @@
+{
+	"name": "duckduckgo",
+	"description": "Library for work with DuckDuckGo API",
+	"authors": ["Azbuka-slovensko"],
+	"homepage": "",
+	"license": "MIT",
+	"libs": ["curl"],
+	"subPackages": [
+		"./example/ddgtest/"
+	],
+	"buildTypes": {
+		"docs": {
+			"buildOptions": ["syntaxOnly"],
+			"dflags": ["-c", "-Dddocs", "docs/doc.ddoc"]
+		}
+	}
+}
