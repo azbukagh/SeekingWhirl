@@ -4,7 +4,7 @@ import std.conv;
 import DuckDuckGo;
 
 int main(string[] args) {
-	if( args.length <= 1 )
+	if(args.length <= 1)
 		return -1;
 	string searchString = join(args[1 .. $], " ");
 	DuckDuckGo ddg = new DuckDuckGo(searchString);
