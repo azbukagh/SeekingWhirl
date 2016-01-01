@@ -4,13 +4,8 @@ import std.json;
 import std.net.curl;
 /**
 	* DuckDuckGo API for D
-	*
 	* Authors: Azbuka-slovensko
 	* License: MIT
-*/
-
-/**
-	* Main DuckDuckGo class
 */
 class DuckDuckGo {
 	///topic summary (can contain HTML)
@@ -112,26 +107,30 @@ class DuckDuckGo {
 		this.DefinitionSource = j["DefinitionSource"].str;
 		this.DefinitionURL = j["DefinitionURL"].str;
 		
-		for(ulong i = 0; i < j["RelatedTopics"].array.length; i++) {
-			this.RelatedTopics ~= result(j["RelatedTopics"][i]["Result"].str,
-				j["RelatedTopics"][i]["FirstURL"].str,
-				icon(j["RelatedTopics"][i]["Icon"]["URL"].str,
-					DDGNumber(j["RelatedTopics"][i]["Icon"]["Height"]),
-					DDGNumber(j["RelatedTopics"][i]["Icon"]["Width"])
-				),
-				j["RelatedTopics"][i]["Text"].str
-			);
-		}
-		for(ulong i = 0; i < j["Results"].array.length; i++) {
-			this.Results ~= result(j["Results"][i]["Result"].str,
-				j["Results"][i]["FirstURL"].str,
-				icon(j["Results"][i]["Icon"]["URL"].str,
-					DDGNumber(j["Results"][i]["Icon"]["Height"]),
-					DDGNumber(j["Results"][i]["Icon"]["Width"])
-				),
-				j["Results"][i]["Text"].str
-			);
-		}	
+		try {
+			for(ulong i = 0; i < j["RelatedTopics"].array.length; i++) {
+				this.RelatedTopics ~= result(j["RelatedTopics"][i]["Result"].str,
+					j["RelatedTopics"][i]["FirstURL"].str,
+					icon(j["RelatedTopics"][i]["Icon"]["URL"].str,
+						DDGNumber(j["RelatedTopics"][i]["Icon"]["Height"]),
+						DDGNumber(j["RelatedTopics"][i]["Icon"]["Width"])
+					),
+					j["RelatedTopics"][i]["Text"].str
+				);
+			}
+		} catch { }
+		try {
+			for(ulong i = 0; i < j["Results"].array.length; i++) {
+				this.Results ~= result(j["Results"][i]["Result"].str,
+					j["Results"][i]["FirstURL"].str,
+					icon(j["Results"][i]["Icon"]["URL"].str,
+						DDGNumber(j["Results"][i]["Icon"]["Height"]),
+						DDGNumber(j["Results"][i]["Icon"]["Width"])
+					),
+					j["Results"][i]["Text"].str
+				);
+			}
+		} catch { }
 	}
 	private long DDGNumber(JSONValue j) {
 		try {

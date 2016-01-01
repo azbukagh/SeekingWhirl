@@ -6,12 +6,7 @@
 	"license": "MIT",
 	"libs": ["curl"],
 	"subPackages": [
-		"./example/ddgtest/"
-	],
-	"buildTypes": {
-		"docs": {
-			"buildOptions": ["syntaxOnly"],
-			"dflags": ["-c", "-Dddocs", "docs/doc.ddoc"]
-		}
-	}
+		"./example/ddgtest/",
+		"./example/DinkyDoo/"
+	]
 }
