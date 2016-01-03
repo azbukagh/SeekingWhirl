@@ -2,10 +2,11 @@
 	"name": "ddgtest",
 	"description": "Example of DuckDuckGo API",
 	"authors": ["Azbuka-slovensko"],
-	"homepage": "https://github.com/Azbuka-slovensko/DuckDuckGo",
 	"license": "MIT",
 	"dependencies": {
-		"duckduckgo": "~>1.0.1",
+		"seekingwhirl": {
+			"path": "../../"
+		}
 	}
 }
  

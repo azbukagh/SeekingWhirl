@@ -1,13 +1,13 @@
 import std.array;
 import std.stdio;
 import std.conv;
-import DuckDuckGo;
+import SeekingWhirl;
 
 int main(string[] args) {
 	if(args.length <= 1)
 		return -1;
 	string searchString = join(args[1 .. $], " ");
-	DuckDuckGo ddg = new DuckDuckGo(searchString);
+	SeekingWhirl ddg = new SeekingWhirl(searchString);
 	writeln("DDG.Abstract=", ddg.Abstract);
 	writeln("DDG.AbstractText=", ddg.AbstractText);
 	writeln("DDG.AbstractSource=", ddg.AbstractSource);

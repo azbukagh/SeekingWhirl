@@ -2,10 +2,11 @@
 	"name": "dinkydoo",
 	"description": "Dinky Doo - your little helper",
 	"authors": ["Azbuka-slovensko"],
-	"homepage": "https://github.com/Azbuka-slovensko/DuckDuckGo",
 	"license": "MIT",
 	"dependencies": {
-		"duckduckgo": "~>1.0.1",
+		"seekingwhirl": {
+			"path": "../../"
+		}
 	}
 }
  

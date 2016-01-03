@@ -1,4 +1,4 @@
-module DuckDuckGo;
+module SeekingWhirl;
 import std.conv;
 import std.json;
 import std.net.curl;
@@ -7,7 +7,7 @@ import std.net.curl;
 	* Authors: Azbuka-slovensko
 	* License: MIT
 */
-class DuckDuckGo {
+class SeekingWhirl {
 	///topic summary (can contain HTML)
 	string Abstract;
 	///topic summary (w\o HTML)

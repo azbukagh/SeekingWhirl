@@ -2,14 +2,14 @@ import std.array;
 import std.stdio;
 import std.conv;
 import std.random;
-import DuckDuckGo;
+import SeekingWhirl;
 int main(string[] args) {
 	if(args.length <= 1)
 		return -1;
 	
 	writeln(randomGreeting());
 	string searchString = join(args[1 .. $], " ");
-	DuckDuckGo ddg = new DuckDuckGo(searchString);
+	SeekingWhirl ddg = new SeekingWhirl(searchString);
 	if(ddg.Results.length == 0) {
 		writeln("There is no results for ", searchString,". Check syntax and try again!");
 	} else {

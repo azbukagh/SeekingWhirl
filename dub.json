@@ -1,8 +1,7 @@
 {
-	"name": "duckduckgo",
+	"name": "seekingwhirl",
 	"description": "Library for work with DuckDuckGo API",
 	"authors": ["Azbuka-slovensko"],
-	"homepage": "https://github.com/Azbuka-slovensko/DuckDuckGo",
 	"license": "MIT",
 	"libs": ["curl"],
 	"subPackages": [
