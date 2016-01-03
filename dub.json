@@ -4,6 +4,7 @@
 	"authors": ["Azbuka-slovensko"],
 	"license": "MIT",
 	"libs": ["curl"],
+	"targetType": "library",
 	"subPackages": [
 		"./example/ddgtest/",
 		"./example/DinkyDoo/"
