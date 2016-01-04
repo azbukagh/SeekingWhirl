@@ -2,6 +2,7 @@
 	"name": "ddgtest",
 	"description": "Example of DuckDuckGo API",
 	"authors": ["Azbuka-slovensko"],
+	"homepage": "http://azbuka-slovensko.github.io/SeekingWhirl/",
 	"license": "MIT",
 	"dependencies": {
 		"seekingwhirl": {

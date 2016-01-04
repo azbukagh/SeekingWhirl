@@ -2,6 +2,7 @@
 	"name": "dinkydoo",
 	"description": "Dinky Doo - your little helper",
 	"authors": ["Azbuka-slovensko"],
+	"homepage": "http://azbuka-slovensko.github.io/SeekingWhirl/",
 	"license": "MIT",
 	"dependencies": {
 		"seekingwhirl": {

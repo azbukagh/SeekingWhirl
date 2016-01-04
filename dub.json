@@ -2,6 +2,7 @@
 	"name": "seekingwhirl",
 	"description": "Library for work with DuckDuckGo API",
 	"authors": ["Azbuka-slovensko"],
+	"homepage": "http://azbuka-slovensko.github.io/SeekingWhirl/",
 	"license": "MIT",
 	"libs": ["curl"],
 	"targetType": "library",
