@@ -1,0 +1,153 @@
+body {
+	font-family: "Lato", sans-serif;
+}
+pre {
+	text-align: left;
+}
+dd {
+	margin-left: 1em;
+}
+main.sw-centered {
+	background-color: #FD9558;
+	color: #FFF;
+}
+main.sw-centered > .container > .row > h1 {
+	font-size: 27px;
+}
+.sw-centered {
+	text-align: center;
+}
+#examples > div > .panel > .panel-heading > a {
+	color: #FFF;
+}
+#examples > div > .panel > .panel-heading > a:hover,
+#examples > div > .panel > .panel-heading > a:focus,
+#examples > div > .panel > .panel-heading > a:active{
+	color: #FFF;
+}
+main.sw-centered > .container > .row > img {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 2em;
+}
+main.sw-centered > .container > .row > h1,
+main.sw-centered > .container > .row > img,
+main.sw-centered > .container > .row > a.btn {
+	margin-bottom: 1.5em;
+}
+.btn-primary {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+}
+.btn-primary:active,
+.btn-primary.active {
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn-primary {
+	background-color: #FD9558;
+	border-color: #FFF;
+	color: #FFF;
+	text-shadow: none;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+	background-color: #FFF;
+	border-color: #FD9558;
+	color: #FD9558;
+}
+.btn-primary:active,
+.btn-primary.active {
+	background-color: #FA7221;
+	border-color: #FD9558;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+	background-color: #FA7221;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+	background-color: #FD9558;
+	border-color: #FFF;
+	color: #FFF;
+}
+.navbar-default {
+	border: none;
+	background-color: #FFF;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+	margin-bottom: 0;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .active > a {
+	background-color: #FDB184;
+	color: #fff;
+	-webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
+}
+.navbar-default .navbar-nav > li > a {
+	color: #FD9558;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover{
+	color: #FFF;
+	background-color: #FDB184;
+}
+.navbar-default .navbar-brand {
+	color: #FD9558;
+}
+a {
+  color: #FD9558;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #FDB184;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.panel {
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+.panel-primary > .panel-heading {
+	background-color: #FD9558;
+	border-color: #FA7221;
+}
+.panel-primary {
+	border-color: #FA7221;
+}

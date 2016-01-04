@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SeekingWhirl</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/theme.min.css"/>
+		<script src="js/smooth-scroll.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="images/favicon/favicon.ico"/>
+		<link rel="icon" type="image/png" href="images/favicon/96.png" sizes="96x96"/>
+		<link rel="icon" type="image/png" href="images/favicon/32.png" sizes="32x32"/>
+		<link rel="icon" type="image/png" href="images/favicon/16.png" sizes="16x16"/>
+		<link rel="manifest" href="images/favicon/manifest.json"/>
+		<meta name="theme-color" content="#FD9558"></meta>
+		<link rel="icon" type="image/png" href="images/favicon/192.png" sizes="192x192"/>
+		<link rel="apple-touch-icon" href="images/favicon/57.png" sizes="57x57"/>
+		<link rel="apple-touch-icon" href="images/favicon/114.png" sizes="114x114"/>
+		<link rel="apple-touch-icon" href="images/favicon/72.png" sizes="72x72"/>
+		<link rel="apple-touch-icon" href="images/favicon/144.png" sizes="144x144"/>
+		<link rel="apple-touch-icon" href="images/favicon/60.png" sizes="60x60"/>
+		<link rel="apple-touch-icon" href="images/favicon/120.png" sizes="120x120"/>
+		<link rel="apple-touch-icon" href="images/favicon/76.png" sizes="76x76"/>
+		<link rel="apple-touch-icon" href="images/favicon/152.png" sizes="152x152"/>
+		<link rel="apple-touch-icon" href="images/favicon/180.png" sizes="180x180"/>
+		<link rel="icon" type="image/svg+xml" href="images/favicon/min.svg"/>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a data-scroll href="#getit">Get it!</a>
+					</li>
+					<li>
+						<a data-scroll href="#docs">Documentation</a>
+					</li>
+					<li>
+						<a data-scroll href="#examples">Examples</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="https://github.com/Azbuka-slovensko/SeekingWhirl">Contribute</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main class="sw-centered">
+			<div class="container">
+				<div class="row">
+					<img src="images/icon.min.svg" alt="icon" width="128" height="128">
+					<h1>SeekingWhirl is a library for easy work with DuckDuckGo API</h1>
+					<a data-scroll class="btn btn-primary btn-lg" href='#getit'>Get it!</a>
+				</div>
+			</div>
+		</main>
+		<div class="container-fluid sw-centered">
+			<div class="row" id="getit">
+				<h2>Free and easy<h2>
+				<p class="lead">Just add it to your project and use! You don't have to configure it or build - instalation is fully automatic.</p>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-3">
+					<h4 style="color: #DCDCDC">In your dub.json</h4>
+					<pre>
+{
+	...
+	"dependencies": {
+		"seekingwhirl": "~>1.0.3"
+	}
+}
+</pre>
+				</div>
+			</div>
+			<div class="row">
+				<p>You can also <a href="http://code.dlang.org/packages/seekingwhirl">visit</a> package page on code.dlang.org, or download zipped package on <a href="https://github.com/Azbuka-slovensko/SeekingWhirl/releases">releases</a> page.</p>
+			</div>
+		</div>
+		<hr>
+		<div class="container-fluid sw-centered">
+			<div class="row" id="docs">
+				<h2>API reference</h2>
+				<div class="col-xs-6 col-xs-offset-3" style="text-align:left">
+					<dl>
+						<dt><em>class</em> SeekingWhirl</dt>
+						<dd>Very important class. Although it is a only one.<dd>
+						
+						<dt>Properties<dt>
+						<dd>
+							<dl>
+								<dt><em>string</em> Abstract</dt>
+								<dd>topic summary (can contain HTML)</dd>
+								<dt><em>string</em> AbstractText</dt>
+								<dd>topic summary (w\o HTML)</dd>
+								<dt><em>string</em> AbstractSource</dt>
+								<dd>name of source</dd>
+								<dt><em>string</em> AbstractURL</dt>
+								<dd>link to topic page</dd>
+								<dt><em>string</em> Image</dt>
+								<dd>link to Abstract's image</dd>
+								<dt><em>string</em> Heading</dt>
+								<dd>topic name</dd>
+								
+								<dt><em>string</em> Answer</dt>
+								<dd>instant answer</dd>
+								<dt><em>string</em> AnswerType</dt>
+								<dd>type of instant answer</dd>
+								
+								<dt><em>string</em> Definition</dt>
+								<dd>dictionary definition</dd>
+								<dt><em>string</em> DefinitionSourcer</dt>
+								<dd>source of definition</dd>
+								<dt><em>string</em> DefinitionURL</dt>
+								<dd>link to expanded page</dd>
+								
+								<dt><em>string</em> Type</dt>
+								<dd>response category</dd>
+								<dt><em>string</em> Redirect</dt>
+								<dd>!bang redirect</dd>
+								
+								<dt><em>result[]</em> RelatedTopics</dt>
+								<dd>internal links</dd>
+								<dt><em>result[]</em> Results</dt>
+								<dd>external links</dd>
+								
+								<dt><em>struct</em> result</dt>
+								<dd>
+									<dl>
+										<dt><em>string</em> Result</dt>
+										<dd>link to topic</dd>
+										<dt><em>string</em> FirstURL</dt>
+										<dd>first url in Result</dd>
+										<dt><em>string</em> Text</dt>
+										<dd>text from firstURL</dd>
+										<dt><em>icon</em> Icon</dt>
+										<dd>icon of topic</dd>
+									</dl>
+								</dd>
+								<dt><em>struct</em> icon</dt>
+								<dd>
+									<dl>
+										<dt><em>string</em> URL</dt>
+										<dd>link to icon</dd>
+										<dt><em>long</em> Height</dt>
+										<dd>icon height</dd>
+										<dt><em>long</em> Width</dt>
+										<dd>icon width</dd>
+									</dl>
+								</dd>
+							</dl>
+						</dd>
+						<dt>Functions</dt>
+						<dd>
+							<dl>
+								<dt><em>this</em>(query, appname, no_redirect, no_html, skip_disambig)</dt>
+								<dd>
+									<dl>
+										<dt><em>string</em> query</dt>
+										<dd>search string</dd>
+										<dt><em>string</em> appname(optional)</dt>
+										<dd>name of app (default="")</dd>
+										<dt><em>bool</em> no_redirect(optional)</dt>
+										<dd>true to skip HTTP redirects (default=false)</dd>
+										<dt><em>bool</em> no_html(optional)</dt>
+										<dd>true to remove HTML from text (default=false)</dd>
+										<dt><em>bool</em> skip_disambig(optional)</dt>
+										<dd>true to skip disambugation (D) Type (default=false)</dd>
+									</dl>
+								</dd>
+							</dl>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<hr>
+			<div class="container-fluid sw-centered">
+				<div class="row" id="examples">
+					<h2>Examples</h2>
+					<p class="lead">Everybody likes examples! Moar examples - less questions, isn't it?</p>
+					<div class="col-xs-4 col-xs-offset-2">
+						<div class="panel panel-primary">
+							<div class="panel-heading"><a href="https://github.com/Azbuka-slovensko/SeekingWhirl/tree/master/example/ddgtest">ddgtest</a></div>
+							<div class="panel-body">
+									Prints all fields. Usable for debug.
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="panel panel-primary">
+							<div class="panel-heading"><a href="https://github.com/Azbuka-slovensko/SeekingWhirl/tree/master/example/DinkyDoo">DinkyDoo</a></div>
+							<div class="panel-body">
+									Smart and funny helper. It seeks for answers, and offers a related topics.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="container-fluid sw-centered">
+			<div class="row">
+				<a data-scroll href="#" class="btn btn-primary btn-lg">
+					<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Top
+				</a>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<p class="small">This page licensed under <a href="http://www.wtfpl.net/">WTFPL</a> license</p>
+				</div>
+				<div class="col-xs-4 col-xs-offset-4">
+					<p class="small">Have a question, or found an mistake? Start a issue on <a href="https://github.com/Azbuka-slovensko/SeekingWhirl/issues">GitHub</a>.</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			smoothScroll.init();
+		</script>
+	</body>
+</html>
