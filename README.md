@@ -6,5 +6,5 @@ API for work with DuckDuckGo
 2. **./example/DinkyDoo** - example of a little helper program.
 
 ## TODO
-1. Beautiful docs
+1. ~~Beautiful docs~~. Done!
 2. More examples
