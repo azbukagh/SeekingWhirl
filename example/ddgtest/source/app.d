@@ -1,12 +1,13 @@
 import std.array;
 import std.stdio;
-import std.conv;
 import SeekingWhirl;
 
 int main(string[] args) {
+	// Exit, if no string for search.
 	if(args.length <= 1)
 		return -1;
 	string searchString = join(args[1 .. $], " ");
+	// ddg contains a response from duckduckgo
 	SeekingWhirl ddg = new SeekingWhirl(searchString);
 	writeln("DDG.Abstract=", ddg.Abstract);
 	writeln("DDG.AbstractText=", ddg.AbstractText);

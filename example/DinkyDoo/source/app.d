@@ -1,15 +1,16 @@
 import std.array;
 import std.stdio;
-import std.conv;
 import std.random;
 import SeekingWhirl;
 int main(string[] args) {
+	// Exit, when there is no string for search
 	if(args.length <= 1)
 		return -1;
 	
 	writeln(randomGreeting());
 	string searchString = join(args[1 .. $], " ");
 	SeekingWhirl ddg = new SeekingWhirl(searchString);
+	// I don't think, that this code needs explorations. Just run and try!
 	if(ddg.Results.length == 0) {
 		writeln("There is no results for ", searchString,". Check syntax and try again!");
 	} else {
@@ -29,7 +30,7 @@ int main(string[] args) {
 	writeln(randomParting());
 	return 0;
 } 
-
+// Returns random greeting from list
 string randomGreeting() {
 	string[] greetings = [
 		"Hello!",
@@ -41,7 +42,7 @@ string randomGreeting() {
 	];
 	return greetings[uniform(0, greetings.length)];
 }
-
+// Returns random parting from list
 string randomParting() {
 	string[] partings = [
 		"Goodbye",
