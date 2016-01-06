@@ -1,17 +1,6 @@
 SeekingWhirl
 -----------------
 Library for work with DuckDuckGo API. 
-## Usage:
-Add to your dub.json:
-```json
-{
-	...
-	"dependencies": {
-		"seekingwhirl": "~>1.0.3"
-	}
-}
-```
-That's all!
 
 ## Documentation
 Aviable at project [website](http://azbuka-slovensko.github.io/SeekingWhirl/#docs).
