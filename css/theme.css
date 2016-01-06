@@ -32,7 +32,7 @@ main.sw-centered > .container > .row > img {
 }
 main.sw-centered > .container > .row > h1,
 main.sw-centered > .container > .row > img,
-main.sw-centered > .container > .row > a.btn {
+main.sw-centered > .container > .row > p.small {
 	margin-bottom: 1.5em;
 }
 .btn-primary {
