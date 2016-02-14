@@ -2,6 +2,7 @@ import std.array;
 import std.stdio;
 import std.random;
 import SeekingWhirl;
+
 int main(string[] args) {
 	// Exit, when there is no string for search
 	if(args.length <= 1)
