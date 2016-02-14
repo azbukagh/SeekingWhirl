@@ -1,5 +1,5 @@
 module SeekingWhirl;
-import std.conv;
+
 import std.json;
 import std.net.curl;
 /**
@@ -8,31 +8,6 @@ import std.net.curl;
 	* License: MIT
 */
 class SeekingWhirl {
-	///topic summary (can contain HTML)
-	string Abstract;
-	///topic summary (w\o HTML)
-	string AbstractText;
-	///name of source
-	string AbstractSource;
-	///link to topic page
-	string AbstractURL;
-	///link to Abstract's image
-	string Image;
-	///Abstract's topic name
-	string Heading;
-	
-	///instant answer
-	string Answer;
-	///instant answer type
-	string AnswerType;
-	
-	///dictionary Definition
-	string Definition;
-	///name of Definition source
-	string DefinitionSource;
-	///link to expanded page
-	string DefinitionURL;
-	
 	///icon asociated with topic
 	struct icon {
 		///link to icon
@@ -42,7 +17,7 @@ class SeekingWhirl {
 		///icon width
 		long Width;
 	}
-	
+
 	///external links
 	struct result {
 		///link to topic
@@ -54,26 +29,72 @@ class SeekingWhirl {
 		///text from firstURL
 		string Text;
 	}
+
+	private {
+		string SWAbstract;
+		string SWAbstractText;
+		string SWAbstractSource;
+		string SWAbstractURL;
+		string SWImage;
+		string SWHeading;
+		
+		string SWAnswer;
+		string SWAnswerType;
+		
+		string SWDefinition;
+		string SWDefinitionSource;
+		string SWDefinitionURL;
+		
+		result[] SWRelatedTopics;
+		result[] SWResults;
+		
+		string SWType;
+		string SWRedirect;
+	}
 	
+	///topic summary (can contain HTML)
+	@property string Abstract()	{ return SWAbstract;	}
+	///topic summary (w\o HTML)
+	@property string AbstractText()	{ return SWAbstractText;	}
+	///name of source
+	@property string AbstractSource()	{ return SWAbstractSource;	}
+	///link to topic page
+	@property string AbstractURL()	{ return SWAbstractURL;	}
+	///link to Abstract's image
+	@property string Image()	{ return SWImage;	}
+	///Abstract's topic name
+	@property string Heading()	{ return SWHeading;	}
+
+	///instant answer
+	@property string Answer()	{ return SWAnswer;	}
+	///instant answer type
+	@property string AnswerType()	{ return SWAnswerType;	}
+
+	///dictionary Definition
+	@property string Definition()	{ return SWDefinition;	}
+	///name of Definition source
+	@property string DefinitionSource()	{ return SWDefinitionSource;	}
+	///link to expanded page
+	@property string DefinitionURL()	{ return SWDefinitionURL;	}
+
 	///array of internal links
-	result[] RelatedTopics;
+	@property result[] RelatedTopics()	{ return SWRelatedTopics;	}
 	///array of external links
-	result[] Results;
-	
+	@property result[] Results()	{ return SWResults;	}
+
 	///response category
-	string Type;
+	@property string Type()	{ return SWType;	}
 	///!bang redirect
-	string Redirect;
-	
-	
+	@property string Redirect()	{ return SWRedirect;	}
+
 	/**
-		* Search
-		* Params:
-		*	query = string to search
-		*	appname = name of app
-		*	no_redirect = true to skip HTTP redirects
-		*	no_html = true to remove HTML from text
-		*	skip_disambig = true to skip disambugation (D) Type
+	* Search
+	* Params:
+	*	query = string to search
+	*	appname = name of app
+	*	no_redirect = true to skip HTTP redirects
+	*	no_html = true to remove HTML from text
+	*	skip_disambig = true to skip disambugation (D) Type
 	*/
 	this(string query,
 		string appname = "",
@@ -93,23 +114,23 @@ class SeekingWhirl {
 			
 		JSONValue j = parseJSON(get(url));
 		
-		this.Abstract = j["Abstract"].str;
-		this.AbstractText = j["AbstractText"].str;
-		this.AbstractSource = j["AbstractSource"].str;
-		this.AbstractURL = j["AbstractURL"].str;
-		this.Image = j["Image"].str;
-		this.Heading = j["Heading"].str;
+		this.SWAbstract	= j["Abstract"].str;
+		this.SWAbstractText	= j["AbstractText"].str;
+		this.SWAbstractSource	= j["AbstractSource"].str;
+		this.SWAbstractURL	= j["AbstractURL"].str;
+		this.SWImage	= j["Image"].str;
+		this.SWHeading	= j["Heading"].str;
 		
-		this.Answer = j["Answer"].str;
-		this.AnswerType = j["AnswerType"].str;
+		this.SWAnswer	= j["Answer"].str;
+		this.SWAnswerType	= j["AnswerType"].str;
 		
-		this.Definition = j["Definition"].str;
-		this.DefinitionSource = j["DefinitionSource"].str;
-		this.DefinitionURL = j["DefinitionURL"].str;
+		this.SWDefinition	= j["Definition"].str;
+		this.SWDefinitionSource	= j["DefinitionSource"].str;
+		this.SWDefinitionURL	= j["DefinitionURL"].str;
 		
 		try {
 			for(ulong i = 0; i < j["RelatedTopics"].array.length; i++) {
-				this.RelatedTopics ~= result(j["RelatedTopics"][i]["Result"].str,
+				this.SWRelatedTopics ~= result(j["RelatedTopics"][i]["Result"].str,
 					j["RelatedTopics"][i]["FirstURL"].str,
 					icon(j["RelatedTopics"][i]["Icon"]["URL"].str,
 						DDGNumber(j["RelatedTopics"][i]["Icon"]["Height"]),
@@ -121,7 +142,7 @@ class SeekingWhirl {
 		} catch { }
 		try {
 			for(ulong i = 0; i < j["Results"].array.length; i++) {
-				this.Results ~= result(j["Results"][i]["Result"].str,
+				this.SWResults ~= result(j["Results"][i]["Result"].str,
 					j["Results"][i]["FirstURL"].str,
 					icon(j["Results"][i]["Icon"]["URL"].str,
 						DDGNumber(j["Results"][i]["Icon"]["Height"]),
@@ -131,6 +152,9 @@ class SeekingWhirl {
 				);
 			}
 		} catch { }
+		
+		this.SWType	= j["Type"].str;
+		this.SWRedirect	= j["Redirect"].str;
 	}
 	private long DDGNumber(JSONValue j) {
 		try {
@@ -138,6 +162,5 @@ class SeekingWhirl {
 		} catch {
 			return 0;
 		}
-		
 	}
 }
