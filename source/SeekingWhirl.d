@@ -37,21 +37,21 @@ class SeekingWhirl {
 		string SWAbstractURL;
 		string SWImage;
 		string SWHeading;
-		
+
 		string SWAnswer;
 		string SWAnswerType;
-		
+
 		string SWDefinition;
 		string SWDefinitionSource;
 		string SWDefinitionURL;
-		
+
 		result[] SWRelatedTopics;
 		result[] SWResults;
-		
+
 		string SWType;
 		string SWRedirect;
 	}
-	
+
 	///topic summary (can contain HTML)
 	@property string Abstract()	{ return SWAbstract;	}
 	///topic summary (w\o HTML)
@@ -111,23 +111,23 @@ class SeekingWhirl {
 			url ~= "&no_html=1";
 		if(skip_disambig)
 			url ~= "&skip_disambig=1";
-			
+
 		JSONValue j = parseJSON(get(url));
-		
+
 		this.SWAbstract	= j["Abstract"].str;
 		this.SWAbstractText	= j["AbstractText"].str;
 		this.SWAbstractSource	= j["AbstractSource"].str;
 		this.SWAbstractURL	= j["AbstractURL"].str;
 		this.SWImage	= j["Image"].str;
 		this.SWHeading	= j["Heading"].str;
-		
+
 		this.SWAnswer	= j["Answer"].str;
 		this.SWAnswerType	= j["AnswerType"].str;
-		
+
 		this.SWDefinition	= j["Definition"].str;
 		this.SWDefinitionSource	= j["DefinitionSource"].str;
 		this.SWDefinitionURL	= j["DefinitionURL"].str;
-		
+
 		try {
 			for(ulong i = 0; i < j["RelatedTopics"].array.length; i++) {
 				this.SWRelatedTopics ~= result(j["RelatedTopics"][i]["Result"].str,
@@ -152,7 +152,7 @@ class SeekingWhirl {
 				);
 			}
 		} catch { }
-		
+
 		this.SWType	= j["Type"].str;
 		this.SWRedirect	= j["Redirect"].str;
 	}

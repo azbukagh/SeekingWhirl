@@ -6,7 +6,7 @@ int main(string[] args) {
 	// Exit, when there is no string for search
 	if(args.length <= 1)
 		return -1;
-	
+
 	writeln(randomGreeting());
 	string searchString = join(args[1 .. $], " ");
 	SeekingWhirl ddg = new SeekingWhirl(searchString);
@@ -19,7 +19,7 @@ int main(string[] args) {
 			writeln("and ",ddg.Results[i].Text, " at ", ddg.Results[i].FirstURL);
 		}
 	}
-	
+
 	if(ddg.RelatedTopics.length > 0) {
 		writeln("Maybe you wanna see related topics like:");
 		writeln(ddg.RelatedTopics[0].Text, " at ", ddg.RelatedTopics[0].FirstURL);
@@ -29,7 +29,7 @@ int main(string[] args) {
 	}
 	writeln(randomParting());
 	return 0;
-} 
+}
 // Returns random greeting from list
 string randomGreeting() {
 	string[] greetings = [

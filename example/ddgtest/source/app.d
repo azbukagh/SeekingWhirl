@@ -15,10 +15,10 @@ int main(string[] args) {
 	writeln("DDG.AbstractURL=", ddg.AbstractURL);
 	writeln("DDG.Image=", ddg.Image);
 	writeln("DDG.Heading=", ddg.Heading);
-	
+
 	writeln("DDG.Answer=", ddg.Answer);
 	writeln("DDG.AnswerType=", ddg.AnswerType);
-	
+
 	writeln("DDG.Definition=", ddg.Definition);
 	writeln("DDG.DefinitionSource=", ddg.DefinitionSource);
 	writeln("DDG.DefinitionURL=", ddg.DefinitionURL);
@@ -31,7 +31,7 @@ int main(string[] args) {
 		writeln("DDG.RelatedTopics[",i,"].Text="
 			, ddg.RelatedTopics[i].Text);
 		writeln("DDG.RelatedTopics[",i,"].Icon.URL="
-			, ddg.RelatedTopics[i].Icon.URL); 
+			, ddg.RelatedTopics[i].Icon.URL);
 		writeln("DDG.RelatedTopics[",i,"].Icon.Height="
 			, ddg.RelatedTopics[i].Icon.Height);
 		writeln("DDG.RelatedTopics[",i,"].Icon.Width="
@@ -55,4 +55,4 @@ int main(string[] args) {
 	writeln("DDG.Type=" , ddg.Type);
 	writeln("DDG.Redirect=" , ddg.Redirect);
 	return 0;
-} 
+}
