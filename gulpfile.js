@@ -7,13 +7,13 @@ var gulp = require('gulp'),
 	rigger = require('gulp-rigger');
 
 gulp.task('sass', function () {
-	gulp.src('./dev/sass/main.scss')
+	gulp.src('./source/sass/main.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('jade', function() {
-	gulp.src(['./dev/template/**/*.jade', '!./dev/template/**/_*.jade'])
+	gulp.src(['./source/template/**/*.jade', '!./source/template/**/_*.jade'])
 		.pipe(jade({
 			pretty: true
 		}))
@@ -22,19 +22,19 @@ gulp.task('jade', function() {
 }); 
 
 gulp.task('js', function() {
-	gulp.src('./dev/js/**/*.js')
+	gulp.src('./source/js/**/*.js')
 		.pipe(rigger())
 		.pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('images', function() {
-	gulp.src('./dev/img/**/*')
+	gulp.src('./source/img/**/*')
 		.pipe(gulp.dest('./public/img'));
 	
 });
 
 gulp.task('fonts', function() {
-	gulp.src('./dev/fonts/**/*')
+	gulp.src('./source/fonts/**/*')
 		.pipe(gulp.dest('./public/fonts'));
 });
 
@@ -56,35 +56,35 @@ gulp.task('watch', function() {
 	gulp.start('js');
 	gulp.start('fonts');
 	
-	gulp.watch('dev/sass/**/*.scss', function() {
+	gulp.watch('source/sass/**/*.scss', function() {
 		gulp.start('sass');
 	});
-	gulp.watch('dev/template/**/*.jade', function() {
+	gulp.watch('source/template/**/*.jade', function() {
 		gulp.start('jade');
 	});
-	gulp.watch('dev/img/**/*', function() {
+	gulp.watch('source/img/**/*', function() {
 		gulp.start('images');
 	});
-	gulp.watch('dev/js/**/*', function() {
+	gulp.watch('source/js/**/*', function() {
 		gulp.start('js');
 	});
 	gulp.start('http-server');
 });
 
 gulp.task('build', function() {
-	gulp.src('./dev/sass/main.scss')
+	gulp.src('./source/sass/main.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(csso())
 		.pipe(gulp.dest('./public/css'));
-	gulp.src(['./dev/template/*.jade', '!./dev/template/_*.jade'])
+	gulp.src(['./source/template/*.jade', '!./source/template/_*.jade'])
 		.pipe(jade())
 		.pipe(gulp.dest('./'));
-	gulp.src('./dev/js/**/*.js')
+	gulp.src('./source/js/**/*.js')
 		.pipe(rigger())
 		.pipe(uglify())
 		.pipe(gulp.dest('./public/js'));
-	gulp.src('./dev/img/**/*')
+	gulp.src('./source/img/**/*')
 		.pipe(gulp.dest('./public/img'));
-	gulp.src('./dev/fonts/**/*')
+	gulp.src('./source/fonts/**/*')
 		.pipe(gulp.dest('./public/fonts'));
 });
