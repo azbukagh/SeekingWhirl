@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-	jade = require('gulp-jade'),
+	pug = require('gulp-pug'),
 	sass = require('gulp-sass'), 
 	csso = require('gulp-csso'),
 	uglify = require('gulp-uglify'),
@@ -12,9 +12,9 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest('./public/css'));
 });
 
-gulp.task('jade', function() {
-	gulp.src(['./source/template/**/*.jade', '!./source/template/**/_*.jade'])
-		.pipe(jade({
+gulp.task('pug', function() {
+	gulp.src(['./source/template/**/*.pug', '!./source/template/**/_*.pug'])
+		.pipe(pug({
 			pretty: true
 		}))
 		.on('error', console.log)
@@ -51,7 +51,7 @@ gulp.task('http-server', function() {
 
 gulp.task('watch', function() {
 	gulp.start('sass');
-	gulp.start('jade');
+	gulp.start('pug');
 	gulp.start('images');
 	gulp.start('js');
 	gulp.start('fonts');
@@ -59,8 +59,8 @@ gulp.task('watch', function() {
 	gulp.watch('source/sass/**/*.scss', function() {
 		gulp.start('sass');
 	});
-	gulp.watch('source/template/**/*.jade', function() {
-		gulp.start('jade');
+	gulp.watch('source/template/**/*.pug', function() {
+		gulp.start('pug');
 	});
 	gulp.watch('source/img/**/*', function() {
 		gulp.start('images');
@@ -76,8 +76,8 @@ gulp.task('build', function() {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(csso())
 		.pipe(gulp.dest('./public/css'));
-	gulp.src(['./source/template/*.jade', '!./source/template/_*.jade'])
-		.pipe(jade())
+	gulp.src(['./source/template/*.pug', '!./source/template/_*.pug'])
+		.pipe(pug())
 		.pipe(gulp.dest('./'));
 	gulp.src('./source/js/**/*.js')
 		.pipe(rigger())

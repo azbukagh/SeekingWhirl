@@ -1,21 +1,22 @@
 {
 	"name": "seekingwhirl",
 	"version": "0.0.1",
-	"description": "",
+	"description": "SeekingWhirl home",
 	"main": "gulpfile.js",
 	"dependencies": {},
 	"devDependencies": {
-		"gulp": "^3.9.0",
-		"gulp-csso": "^1.0.1",
-		"gulp-jade": "^1.1.0",
+		"gulp": "^3.9.1",
+		"gulp-csso": "^1.1.0",
+		"gulp-pug": "^1.1.0",
 		"gulp-rigger": "^0.5.8",
-		"gulp-uglify": "^1.5.1",
+		"gulp-sass": "^2.3.2",
+		"gulp-uglify": "^1.5.4",
 		"gulp-webserver": "^0.9.1",
-		"gulp-sass": "^2.1.1"
+		"pug": "^2.0.0-beta5"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"author": "",
+	"author": "Azbuka",
 	"license": "WTFPL"
 }
